@@ -1,50 +1,30 @@
-# Template R operator
-
-The `Template R operator` is a template repository for the creation of R operators in Tercen. An overview of steps for developing an operator are:
-
-1. create a github repo
-2. install tercen_studio
-3. login to tercen_studio
-4. git clone the newly created repo
-5. start developing in R in tercen_studio
-6. add R packages to the repo
-7. push to the github repo
-8. go to tercen and install the operator
-
-More information can be found in [Tercen app builder's guide](https://tercen.github.io/appbuilders-guide/).
-
-Below is the operator README standard structure:
+# Linear mixed model1 operator
 
 ##### Description
 
-The `Template R operator` is a template repository for the creation of R operators in Tercen.
+The `linear mixed model1` operator performs a mixed model analysis with 1 fixed and 1 random factor.
 
 ##### Usage
 
 Input projection|.
 ---|---
-`x-axis`        | type, description 
-`y-axis`        | type, description 
-`row`           | type, description 
-`column`        | type, description 
-`colors`        | type, description 
-`labels`        | type, description 
+`y-axis`| measurement value
+`x-axis`| random factor, i.e. Barcode. Note that the random factor is not nested in the fixed hence, hence if the same value of the random factor occurs for multiple values of the fixed factor this results in a "paired" analysis for the fixed effect Use unique values for the random factor if this is not intended.
+`color` | fixed factor, i.e. Sample Name. When using a fixed factor which is numerical then the effect is interpreted as a slope and significance is associated with the zero slope (i.e. null hypothesis).
 
-Input parameters|.
+Properties|.
 ---|---
-`input_var`        | parameter description
+`Main Grouping Factor`| Indicate if the main grouping factor (i.e. fixed effect) must be treated as categorical or numerical. Default value is categorical.
 
 Output relations|.
 ---|---
-`output_var`        | output relation
-`Operator view`        | view of the Shiny application
+`pMain, logpMain`| numeric, p-value calculated per cell
+`fdr`| 	p-value after false discovery adjustment
+`Top`| per test rank according to p-value, if there is only one column in the calling cross-tab this value is returned as spot annotation.
 
 ##### Details
 
-Details on the computation.
-
-##### See Also
-
-[template_shiny_operator](https://github.com/tercen/template_shiny_operator)
-, [template_docker_operator](https://github.com/tercen/template_docker_operator)
-
+This is an operator to perform a [mixed model analysis](https://pamcloud.pamgene.com/wiki/Wiki.jsp?page=Mixed%20Model%201%20way) with 1 fixed and 1 random factor.
+Some examples with one fixed and one random factor are:
+* studying a drug treatment effect (i.e. fixed factor) in a populations of cells lines (i.e. random effect).  
+It is implemented as an  [operator PamApp](https://pamcloud.pamgene.com/wiki/Wiki.jsp?page=Operator%20PamApp) (i.e. [RStepOperator](https://pamcloud.pamgene.com/wiki/Wiki.jsp?page=RStepOperator)).
