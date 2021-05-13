@@ -19,8 +19,8 @@ Properties|.
 Output relations|.
 ---|---
 `pMain, logpMain`| numeric, p-value calculated per cell
-`fdr`| 	p-value after false discovery adjustment
-`Top`| per test rank according to p-value, if there is only one column in the calling cross-tab this value is returned as spot annotation.
+`fdr`            | 	p-value after false discovery adjustment
+`Top`            | per test rank according to p-value, if there is only one column in the calling cross-tab this value is returned as spot annotation.
 
 ##### Details
 

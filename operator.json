@@ -1,30 +1,18 @@
 {
-  "name": "Template R operator",
-  "description": "Return the medium value of a cell",
-  "tags": ["template"],
+  "name": "Linear Mixed Model1",
+  "description": "Analysis of variance",
+  "tags": ["statistical testing", "test", "linear model"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/template_R_operator"],
+  "urls": ["https://github.com/tercen/linear_mixed_model1_operator"],
   "properties": [
-   {
-    "kind": "StringProperty",
-    "name": "string_example",
-    "defaultValue": "example",
-    "description": "description parameter 1"
-    },
-    {
+  {
     "kind": "EnumeratedProperty",
-    "name": "list_example",
-    "defaultValue": "value1",
-    "values": [
-      "value1",
-      "StringProperty",
-      "DoubleProperty",
-      "BooleanProperty",
-      "EnumeratedProperty"
-    ],
-    "description": "description parameter 2"
-  }
-  ]
+    "name": "Grouping Variable",
+    "defaultValue": "categorical",
+    "description": "Type of the grouping variable",
+	  "values": [
+      "categorical",
+      "contineous"
+      ]
+  } ]
 }
-
-
