@@ -11,7 +11,7 @@ library(nlme)
 
 do.mixed_model = function(df){
   aLme <- try(lme(.y ~ MainFactor, random = ~ 1| RepFactor, data = df), silent = TRUE)
-  if(!inherits(aLme, "try-error")){
+  if (!inherits(aLme, "try-error")) {
     pMain <- anova(aLme)[2,4]
     delta <- as.numeric(fixef(aLme)[2])
   } else {
@@ -33,7 +33,7 @@ groupingType = ifelse(is.null(ctx$op.value('Grouping Variable')), 'categorical',
 
 data <- ctx %>% 
   select(.ci, .ri, .y, .x) %>%
-  mutate(MainFactor = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors))) %>%
+  mutate(MainFactor = ctx$select(ctx$colors) %>% pull()) %>%
   rename(RepFactor = as.factor('.x'))
 
 if (groupingType == 'categorical'){
