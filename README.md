@@ -20,11 +20,11 @@ Output relations|.
 ---|---
 `pMain`          | numeric, p-value calculated per cell
 `logpMain`       | numeric, -log10 value of pMain
-`delta`          | numeric, first regression coefficient 
+`delta`          | numeric, first regression coefficient, delta between groups in case of a two-group analysis. 
 
 ##### Details
 
 This is an operator to perform a [mixed model analysis](https://pamcloud.pamgene.com/wiki/Wiki.jsp?page=Mixed%20Model%201%20way) with 1 fixed and 1 random factor.
 Some examples with one fixed and one random factor are:
-* studying a drug treatment effect (i.e. fixed factor) in a populations of cells lines (i.e. random effect).  
-It is implemented as an  [operator PamApp](https://pamcloud.pamgene.com/wiki/Wiki.jsp?page=Operator%20PamApp) (i.e. [RStepOperator](https://pamcloud.pamgene.com/wiki/Wiki.jsp?page=RStepOperator)).
+* studying a drug treatment effect ("treated" vs "untreated"  = a fixed factor) in a populations of cells lines (i.e. random effect).  
+
