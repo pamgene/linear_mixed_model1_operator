@@ -33,7 +33,7 @@ if (groupingType == 'categorical'){
   data <- data %>% mutate(MainFactor = as.factor(MainFactor))
 } else {
   if (!is.numeric(data %>% pull(MainFactor))){
-    stop("Grouping data can not be used as a contineous variable")
+    stop("Grouping data can not be used as a numeric variable")
   }
 }
 
