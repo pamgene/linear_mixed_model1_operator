@@ -3,7 +3,7 @@
   "description": "Analysis of variance",
   "tags": ["statistical testing", "test", "linear model"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/linear_mixed_model1_operator"],
+  "urls": ["https://github.com/pamgene/linear_mixed_model1_operator"],
   "properties": [
   {
     "kind": "EnumeratedProperty",
